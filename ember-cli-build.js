@@ -1,10 +1,14 @@
 /*jshint node:true*/
 /* global require, module */
 var EmberAddon = require('ember-cli/lib/broccoli/ember-addon');
+var stylelint = require('stylelint');
 
 module.exports = function(defaults) {
   var app = new EmberAddon(defaults, {
-    // Add options here
+    'stylelint': {
+      linterConfig: { syntax: 'css' },
+      includePaths: [ 'addon/styles' ],
+    },
   });
 
   /*
